@@ -11,7 +11,7 @@ void setup() {
   fullScreen(P3D);
   cam = new PeasyCam(this, 200);
   globe = new PVector[total+1][total+1];
-  
+
 }
 
 
@@ -49,16 +49,16 @@ void draw() {
   }
       
   for (int i = 0; i < total; i++) { // i is lat
-      //if (i%2 == 0){
-      //  fill(0);
-      //} else {
-      //  fill(255);
-      //}
+      if (i%2 == 0){
+        fill(0);
+      } else {
+        fill(255);
+      }
       beginShape(TRIANGLE_STRIP);
       for (int j = 0; j < total+1; j++) { // j is lon
         PVector v1 = globe[i][j];
         noStroke();
-        fill(68, 207, 144);
+        //fill(68, 207, 144);
         vertex(v1.x, v1.y, v1.z);
         PVector v2 = globe[i+1][j];
         vertex(v2.x, v2.y, v2.z);
